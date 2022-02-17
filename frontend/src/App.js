@@ -11,7 +11,7 @@ const socket = io.connect(liveURL);
 
 function App() {
   const [username, setUsername] = useState("");
-  const [room, setRoom] = useState("123");
+  const [room, setRoom] = useState("1");
   const [showChat, setShowChat] = useState(false);
 
   const joinRoom = () => {
@@ -35,6 +35,7 @@ function App() {
           />
           <input
             type="text"
+            value="1"
             placeholder="Room ID..."
             onChange={(event) => {
               setRoom(event.target.value);

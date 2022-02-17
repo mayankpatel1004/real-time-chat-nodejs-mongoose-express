@@ -38,7 +38,7 @@ function Chat({ socket, username, room }) {
   }
 
   useEffect(async () => {
-    await getCurrentChatData("123");
+    await getCurrentChatData("1");
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
     });
