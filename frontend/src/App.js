@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Chat from "./Chat";
 import io from "socket.io-client";
 
-const liveURL = "http://localhost:3001";
+const liveURL = "http://localhost:3752";
 
 const socket = io.connect(liveURL);
 

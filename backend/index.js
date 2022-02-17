@@ -5,10 +5,17 @@ const cors = require("cors");
 const { Server } = require("socket.io");
 const mongoose = require("mongoose");
 
-const port = 3001;
+const port = 3752;
 app.use(cors());
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 
-mongoose.connect("mongodb://localhost:27017/nodesocketio",{
+mongoose.connect("mongodb+srv://admin:admin@cluster0.my1u1.mongodb.net/test?retryWrites=true&w=majority",{
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then( () => {console.log("Connection Successful....")})
@@ -18,7 +25,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3751",
     methods: ["GET", "POST"],
   },
 });

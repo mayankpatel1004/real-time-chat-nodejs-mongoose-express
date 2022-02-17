@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import ScrollToBottom from "react-scroll-to-bottom";
 
-const liveURL = "http://localhost:3001";
+const liveURL = "http://localhost:3752";
 
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
